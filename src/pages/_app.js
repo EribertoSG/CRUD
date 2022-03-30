@@ -1,5 +1,5 @@
 import 'normalize.css'
-import { TaskProvider } from '../context/taskContext'
+import { TaskProvider } from '../components/context/taskContext'
 
 function myApp({ Component, pageProps }) {
     return (
