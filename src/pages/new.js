@@ -8,7 +8,7 @@ export default function TaskForm() {
         name: '',
         description: ''
     }
-    const router = useRouter()
+    const { push } = useRouter()
 
     const { createTask } = useTask()
 
@@ -18,7 +18,7 @@ export default function TaskForm() {
     const handleSubmit = e => {
         e.preventDefault()
         createTask(name, description)
-        router.push('/')
+        push('/')
     }
     const handleInputChange = ({ target: { name, value } }) => {
         setData({ ...data, [name]: value })
