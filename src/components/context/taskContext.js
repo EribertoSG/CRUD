@@ -3,10 +3,10 @@ import { v4 as uuid } from 'uuid'
 const TaskContext = createContext()
 
 const TaskProvider = ({ children }) => {
-    const [tasks, setTasks] = useState([{ name: 'Hello from provider' }])
+    const [tasks, setTasks] = useState([])
 
-    const createTask = (name, description) => {
-        setTasks([...tasks, { name, description, id: uuid() }])
+    const createTask = (title, description) => {
+        setTasks([...tasks, { title, description, id: uuid() }])
     }
 
     const data = { tasks, createTask }
