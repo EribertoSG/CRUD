@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import { useTask } from '../components/customHooks/useTask'
+import Layout from '../components/pages/layout'
 
 
 export default function TaskForm() {
@@ -37,17 +37,15 @@ export default function TaskForm() {
     }
 
     return (
-        <div>
-            <h1>{query.id ? 'Update Task' : 'New Task'}</h1>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="title" placeholder="Name" onChange={handleInputChange} value={data.title} />
-                <textarea name="description" id="description" cols="30" rows="10" placeholder="Descriptionn" onChange={handleInputChange} value={data.description}></textarea>
-                <button type="submit">{query.id ? 'Update' : 'Create'}</button>
-            </form>
-            <Link href="/">
-                <a>Inicio</a>
-            </Link>
-
-        </div>
+        <Layout>
+            <div className='form'>
+                <h1 className='form__title'>{query.id ? 'Update Task' : 'New Task'}</h1>
+                <form onSubmit={handleSubmit} className="form__container">
+                    <input type="text" name="title" placeholder="Name" onChange={handleInputChange} value={data.title} />
+                    <textarea name="description" id="description" cols="30" rows="10" placeholder="Descriptionn" onChange={handleInputChange} value={data.description}></textarea>
+                    <button type="submit" className='button'>{query.id ? 'Update' : 'Create'}</button>
+                </form>
+            </div>
+        </Layout>
     )
 }

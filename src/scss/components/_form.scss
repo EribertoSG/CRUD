@@ -1,0 +1,42 @@
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form__container {
+    width: 350px;
+    height: auto;
+    border-radius: .5rem;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.form__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: rgb(37, 37, 37);
+}
+
+%design {
+    outline: none;
+    border-radius: .25rem;
+    border: 1px solid #eee;
+    color: rgb(36, 36, 36);
+    padding: .5rem 1rem;
+    margin-bottom: .5rem
+}
+
+.form__container input,
+textarea {
+    @extend %design;
+}
+
+.form__container input:focus, textarea:focus{
+    border: 1px solid #0070f3;
+}

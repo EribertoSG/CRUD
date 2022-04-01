@@ -5,9 +5,11 @@ const Card = ({ index, title, description, onClick, onDelete }) => {
             <span className="card__index">{index}</span>
             <div className="card__body">
                 <h3 className="title">{title}</h3>
-                <p className="description">{description}</p>
+                <div className="card__description">
+                    <p className="text">{description}</p>
+                </div>
             </div>
-            <button className="card__button" onClick={onDelete}>Delete</button>
+            <button className="button delete" onClick={onDelete}>Delete</button>
         </div>
     )
 }

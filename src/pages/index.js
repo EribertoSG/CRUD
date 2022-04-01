@@ -1,8 +1,7 @@
-import Link from 'next/link'
 import { useRouter } from 'next/router'
-
 import { useTask } from '../components/customHooks/useTask'
 import Card from '../components/molecules/Card'
+import Layout from '../components/pages/layout'
 
 function Home() {
     const { push } = useRouter()
@@ -14,15 +13,8 @@ function Home() {
     }
 
     return (
-        <div>
-            <header>
-                <span>{tasks.length} task</span>
-                <Link href="/new">
-                    <a>Create new Task</a>
-                </Link>
-            </header>
-            <hr />
-            <main>
+        <Layout>
+            <div className='grid'>
                 {tasks.length === 0 ? <h1>No hay tareas</h1> : (
                     tasks.map((task, index) =>
                         <Card
@@ -36,8 +28,8 @@ function Home() {
                     )
                 )
                 }
-            </main>
-        </div>
+            </div>
+        </Layout>
     )
 }
 
