@@ -10,8 +10,11 @@ const TaskProvider = ({ children }) => {
 
     const updateTask = (id, updatedTask) =>
         setTasks([...tasks.map(task => task.id === id ? { ...task, ...updatedTask } : task)])
+    //delete task
+    const deleteTask = id =>
+        setTasks([...tasks.filter(task => task.id !== id)])
 
-    const data = { tasks, createTask, updateTask }
+    const data = { tasks, createTask, updateTask, deleteTask }
 
     return (
         <TaskContext.Provider value={data}>

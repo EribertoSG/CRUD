@@ -6,7 +6,12 @@ import Card from '../components/molecules/Card'
 
 function Home() {
     const { push } = useRouter()
-    const { tasks } = useTask()
+    const { tasks, deleteTask } = useTask()
+
+    const buttonDelete = (e, id) => {
+        e.stopPropagation()
+        deleteTask(id)
+    }
 
     return (
         <div>
@@ -26,6 +31,7 @@ function Home() {
                             title={task.title}
                             description={task.description}
                             onClick={() => push(`/edit/${task.id}`)}
+                            onDelete={e => buttonDelete(e, task.id)}
                         />
                     )
                 )

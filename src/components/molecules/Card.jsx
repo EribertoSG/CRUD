@@ -1,5 +1,5 @@
 
-const Card = ({ index, title, description, onClick }) => {
+const Card = ({ index, title, description, onClick, onDelete }) => {
     return (
         <div className="card" onClick={onClick}>
             <span className="card__index">{index}</span>
@@ -7,7 +7,7 @@ const Card = ({ index, title, description, onClick }) => {
                 <h3 className="title">{title}</h3>
                 <p className="description">{description}</p>
             </div>
-            <button className="card__button">Delete</button>
+            <button className="card__button" onClick={onDelete}>Delete</button>
         </div>
     )
 }
