@@ -5,11 +5,13 @@ const TaskContext = createContext()
 const TaskProvider = ({ children }) => {
     const [tasks, setTasks] = useState([])
 
-    const createTask = (title, description) => {
+    const createTask = (title, description) =>
         setTasks([...tasks, { title, description, id: uuid() }])
-    }
 
-    const data = { tasks, createTask }
+    const updateTask = (id, updatedTask) =>
+        setTasks([...tasks.map(task => task.id === id ? { ...task, ...updatedTask } : task)])
+
+    const data = { tasks, createTask, updateTask }
 
     return (
         <TaskContext.Provider value={data}>

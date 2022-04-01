@@ -20,7 +20,13 @@ function Home() {
             <main>
                 {tasks.length === 0 ? <h1>No hay tareas</h1> : (
                     tasks.map((task, index) =>
-                        <Card key={task.id} index={index + 1} title={task.title} description={task.description} onClick={() => push(`/edit/${task.id}`)} />
+                        <Card
+                            key={task.id}
+                            index={index + 1}
+                            title={task.title}
+                            description={task.description}
+                            onClick={() => push(`/edit/${task.id}`)}
+                        />
                     )
                 )
                 }
