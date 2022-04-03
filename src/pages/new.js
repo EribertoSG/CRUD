@@ -18,6 +18,9 @@ export default function TaskForm() {
 
     const handleSubmit = e => {
         e.preventDefault()
+        if (e.target.title.value === '' || e.target.description.value === '') {
+            return alert('Los campos no pueden estar vacios')
+        }
         if (!query.id) {
             createTask(title, description)
         } else {
