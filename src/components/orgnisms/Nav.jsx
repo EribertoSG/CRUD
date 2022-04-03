@@ -3,8 +3,6 @@ import Link from "next/link"
 
 const Nav = () => {
     const router = useRouter()
-    console.log(router.pathname)
-
     return (
         <header className="header">
             <div className="header__nav">
