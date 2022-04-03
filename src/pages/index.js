@@ -9,7 +9,12 @@ function Home() {
 
     const buttonDelete = (e, id) => {
         e.stopPropagation()
-        deleteTask(id)
+        const question = confirm('Estas seguro de querer borrar esta tarea?')
+        if (question) {
+            deleteTask(id)
+        }else{
+            alert('La tarea se conservará')
+        }
     }
 
     return (
