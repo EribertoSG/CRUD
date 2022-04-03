@@ -1,0 +1,14 @@
+%wh{
+    width: 24px;
+    height: 24px;
+}
+.plus{
+    @extend %wh;
+    fill: #f2f8ff;
+    margin-left: .25rem;
+}
+.trash{
+    fill: #fff2f2;
+    @extend %wh;
+    margin-left: .5rem;
+}
