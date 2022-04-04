@@ -1,6 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
+module.exports = () => {
+    const env = {
+        SITE_NAME: 'Task'
+    }
+    return {
+        env
+    }
 }
-
-module.exports = nextConfig
