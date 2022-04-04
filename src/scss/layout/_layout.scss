@@ -1,8 +1,0 @@
-$margin-local:2rem;
-
-.main-layout {
-    min-height: calc(100vh - ($header-height + $margin-local));
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-top: $margin-local + $header-height;
-}
