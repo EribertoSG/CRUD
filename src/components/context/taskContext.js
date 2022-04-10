@@ -14,20 +14,19 @@ const TaskProvider = ({ children }) => {
     }
 
     const [state, dispatch] = useReducer(appReducer, initialState)
-
     const addTask = (task) => {
-        dispatch({ type: ADD_TASK, payload: {...task, id: uuid()} })
+        dispatch({ type: ADD_TASK, payload: { ...task, id: uuid() } })
     }
     const deleteTask = (id) => {
         dispatch({ type: DELETE_TASK, payload: id })
     }
     //update task
-    const updateTask = (task) => {
-        dispatch({ type: UPDATE_TASK, payload: task })
+    const updateTask = (id, task) => {
+        dispatch({ type: UPDATE_TASK, payload: { ...task, id } })
     }
+    const { tasks } = state
 
-
-    const data = { ...state, addTask, deleteTask, updateTask }
+    const data = { tasks, addTask, deleteTask, updateTask }
     return <TaskContext.Provider value={data}>{children}</TaskContext.Provider>
 }
 

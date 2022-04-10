@@ -12,7 +12,10 @@ export default function appReducer(state, { type, payload }) {
                 tasks: state.tasks.filter(task => task.id !== payload)
             }
         case UPDATE_TASK:
-            
+            return {
+                tasks: state.tasks.map(task => task.id == payload.id ? payload : task)
+            }
+
         default:
             state
             break;
