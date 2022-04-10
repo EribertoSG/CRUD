@@ -23,19 +23,20 @@ const Form = () => {
         } else {
             if (query) {
                 console.log('Editing')
-            }else{
+            } else {
                 addTask(formData)
             }
             push('/')
         }
     }
+    const action = query.id ? 'Update' : 'Create'
     return (
         <div className="form__container">
-            <h1>{query ? 'Update' : 'Create'}</h1>
+            <h1>{action}</h1>
             <form className="form" onSubmit={handleSubmit}>
                 <input className="input" type="text" name="title" id="title" placeholder="Title" onChange={handleInputChange} />
                 <textarea className="textarea" name="description" id="description" cols="30" rows="10" placeholder="Description" onChange={handleInputChange}></textarea>
-                <button className="button full" type='submit'>Create</button>
+                <button className="button full" type='submit'>{action}</button>
             </form>
         </div>
     )
