@@ -1,8 +1,13 @@
+import 'normalize.css'
+import '../scss/main.scss'
+import Navigation from '../components/organisms/Navigation'
+import { TaskProvider } from '../components/context/taskContext'
+
 export default function MyApp({ Component, pageProps }) {
     return (
-        <>
-            <h1>I´m every pages</h1>
+        <TaskProvider>
+            <Navigation />
             <Component {...pageProps} />
-        </>
+        </TaskProvider>
     )
 }

@@ -1,0 +1,37 @@
+import { createContext, useReducer } from 'react'
+import { v4 as uuid } from 'uuid'
+import appReducer from './appReducer'
+import { ADD_TASK, DELETE_TASK, UPDATE_TASK } from './actions'
+
+const TaskContext = createContext()
+
+const TaskProvider = ({ children }) => {
+    const initialState = {
+        tasks: [
+            { id: 1, title: 'task1', description: 'task1 description' },
+            { id: 2, title: 'task2', description: 'task2 description' }
+        ]
+    }
+
+    const [state, dispatch] = useReducer(appReducer, initialState)
+
+    const addTask = (task) => {
+        dispatch({ type: ADD_TASK, payload: {...task, id: uuid()} })
+    }
+    const deleteTask = (id) => {
+        dispatch({ type: DELETE_TASK, payload: id })
+    }
+    //update task
+    const updateTask = (task) => {
+        dispatch({ type: UPDATE_TASK, payload: task })
+    }
+
+
+    const data = { ...state, addTask, deleteTask, updateTask }
+    return <TaskContext.Provider value={data}>{children}</TaskContext.Provider>
+}
+
+export default TaskContext
+export {
+    TaskProvider
+}

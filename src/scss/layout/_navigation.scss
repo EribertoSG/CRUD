@@ -1,0 +1,21 @@
+.header {
+    width: 100%;
+    height: $header-height;
+    background-color: #fff;
+    box-shadow: 0 0 12px 0 rgba($color: #000000, $alpha: .2);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.header__container {
+    max-width: 1200px;
+    background-color: inherit;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}

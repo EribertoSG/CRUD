@@ -1,0 +1,29 @@
+.form__container {
+    text-align: center;
+    padding: 1rem;
+
+    & h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.form {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.input,
+.textarea {
+    padding: .5rem 1rem;
+    border: 1px solid #eee;
+    outline: none;
+    border-radius: .25rem;
+    margin-bottom: .5rem;
+
+    &:focus {
+        border: 1px solid #ff4444;
+    }
+}

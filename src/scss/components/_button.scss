@@ -1,0 +1,32 @@
+.button {
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    border: #fd3131;
+    background-color: #ff4444;
+    color: #ffecec;
+    outline: none;
+    transition: transform .2s ease, background-color .2s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ff5c5c;
+    }
+
+    &:active {
+        transform: scale(.95);
+    }
+}
+
+.full {
+    width: 100%;
+}
+
+.edit {
+    background-color: rgb(29, 34, 53);
+    color: #fff;
+    margin-right: .5rem;
+    
+    &:hover {
+        background-color: rgb(45, 50, 71);
+    }
+}
