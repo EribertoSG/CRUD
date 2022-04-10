@@ -13,8 +13,10 @@ const Form = () => {
     const [formData, setFormData] = useState(initailState)
     console.log(formData)
     useEffect(() => {
-        const { title, description } = tasks.find(task => task.id == query.id)
-        setFormData({ title, description })
+        if (query.id) {
+            const { title, description } = tasks.find(task => task.id == query.id)
+            setFormData({ title, description })
+        }
     }, [])
 
     const handleInputChange = ({ target: { name, value } }) => {
@@ -24,17 +26,16 @@ const Form = () => {
     const handleSubmit = e => {
         e.preventDefault()
         if (e.target.title.value === '' || e.target.description.value === '') {
-            alert('Please fill out all fields')
-        } else {
-            if (query.id) {
-                updateTask(query.id, formData)
-            } else {
-                addTask(formData)
-            }
-            push('/')
+            return alert('Please fill out all fields')
         }
+        if (query.id) {
+            updateTask(query.id, formData)
+        } else {
+            addTask(formData)
+        }
+        push('/')
     }
-    const action = query.id ? 'Update' : 'Create'
+    const action = query.id ? 'Update Task' : 'Create Task'
     return (
         <div className="form__container">
             <h1>{action}</h1>

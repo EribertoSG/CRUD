@@ -7,10 +7,7 @@ const TaskContext = createContext()
 
 const TaskProvider = ({ children }) => {
     const initialState = {
-        tasks: [
-            { id: 1, title: 'task1', description: 'task1 description' },
-            { id: 2, title: 'task2', description: 'task2 description' }
-        ]
+        tasks: []
     }
 
     const [state, dispatch] = useReducer(appReducer, initialState)
