@@ -14,15 +14,17 @@ export default function Home() {
             </Head>
             <Layout>
                 <div className='grid'>
-                    {tasks.map((t, index) => (
-                        <Card
-                            key={index + 1}
-                            index={index + 1}
-                            task={t}
-                            onDelete={() => deleteTask(t.id)}
-                            onEdit={() => push(`/edit/${t.id}`)}
-                        />
-                    ))}
+                    {tasks.length == 0
+                        ? <h1 className='no-homework'>There is no homework</h1>
+                        : tasks.map((t, index) => (
+                            <Card
+                                key={index + 1}
+                                index={index + 1}
+                                task={t}
+                                onDelete={() => deleteTask(t.id)}
+                                onEdit={() => push(`/edit/${t.id}`)}
+                            />
+                        ))}
                 </div>
             </Layout>
         </>

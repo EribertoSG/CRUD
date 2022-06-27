@@ -15,9 +15,11 @@ const TaskProvider = ({ children }) => {
         dispatch({ type: ADD_TASK, payload: { ...task, id: uuid() } })
     }
     const deleteTask = (id) => {
-        dispatch({ type: DELETE_TASK, payload: id })
+        const action = confirm('Are you sure to delete this task?')
+        if (action) {
+            dispatch({ type: DELETE_TASK, payload: id })
+        }
     }
-    //update task
     const updateTask = (id, task) => {
         dispatch({ type: UPDATE_TASK, payload: { ...task, id } })
     }

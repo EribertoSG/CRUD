@@ -10,7 +10,7 @@ const Navigation = () => {
                 <div className="header__container">
                     <div className="header__rigth">
                         <Link href='/'>
-                            <a>Logo</a>
+                            <a className="logo">Task App</a>
                         </Link>
                     </div>
                     <div className="header__letf">
