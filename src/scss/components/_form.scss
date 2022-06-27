@@ -10,9 +10,21 @@
 
 .form {
     display: flex;
-    width: 300px;
+    width: 320px;
     flex-direction: column;
     margin: 0 auto;
+}
+
+.input-title,
+.input-description,
+.input-date {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    & label {
+        margin-bottom: .5rem;
+    }
 }
 
 .input,
@@ -26,4 +38,8 @@
     &:focus {
         border: 1px solid #ff4444;
     }
+}
+
+.mb{
+    margin-bottom: 1rem;
 }
